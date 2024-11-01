@@ -1,0 +1,20 @@
+﻿@model IEnumerable<QLBanSach.Models.Entities.CHUDE>
+
+<ul class="left_menu">
+    @foreach (var item in Model.Select((value, index) => new { value, index }))
+    {
+        if (item.value.MaCD > 0) // Check if MaCD is valid
+        {
+            <li class="@(item.index % 2 == 0 ? "even" : "odd")">
+                <a href="@Url.Action("SPTheochude", "BookStore", new { MaCD = item.value.MaCD })">@item.value.TenChuDe</a>
+            </li>
+        }
+        else
+        {
+            <li class="@(item.index % 2 == 0 ? "even" : "odd")">
+                <span>No valid ID</span>
+            </li>
+        }
+    }
+</ul>
+

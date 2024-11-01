@@ -1,0 +1,36 @@
+﻿@model IEnumerable<QLBanSach.Models.Entities.SACH>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>ĐÂY LÀ TRANG CHỦ</h2>
+
+@foreach (var sach in Model)
+{
+    <div class="prod_box">
+        <div class="top_prod_box"></div>
+        <div class="center_prod_box">
+            <div class="product_img">
+                <a href="@Url.Action("Details","BookStore",new {id = sach.Masach})">
+                    <img src="~/Content/Images/iphone.png" alt="" border="0" />
+                </a>
+            </div>
+            <div class="prod_price"><span class="reduce">@sach.Giaban</span> <span class="price">@sach.Giaban</span></div>
+        </div>
+        <div class="bottom_prod_box"></div>
+        <div class="prod_details_tab">
+            <a href="http://all-free-download.com/free-website-templates/" title="header=[Add to cart] body=[&nbsp;] fade=[on]">
+                <img src="~/Content/Images/cart.gif" alt="" border="0" class="left_bt" />
+            </a>
+            <a href="http://all-free-download.com/free-website-templates/" title="header=[Specials] body=[&nbsp;] fade=[on]">
+                <img src="~/Content/Images/favs.gif" alt="" border="0" class="left_bt" />
+            </a>
+            <a href="http://all-free-download.com/free-website-templates/" title="header=[Gifts] body=[&nbsp;] fade=[on]">
+                <img src="~/Content/Images/favorites.gif" alt="" border="0" class="left_bt" />
+            </a> <a href="@Url.Action("Details","BookStore",new {id = sach.Masach})" class="prod_details">
+                details
+            </a>
+        </div>
+    </div>
+}
