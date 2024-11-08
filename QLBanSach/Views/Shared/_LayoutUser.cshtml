@@ -47,76 +47,45 @@
         <div id="menu_tab">
             <div class="left_menu_corner"></div>
             <ul class="menu">
-                <li><a href="http://all-free-download.com/free-website-templates/" class="nav1"> Home</a></li>
+                <li><a href="@Url.Action("Index","BookStore")" class="nav1"> Home</a></li>
                 <li class="divider"></li>
-                <li><a href="http://all-free-download.com/free-website-templates/" class="nav2">Products</a></li>
+                <li><a href="@Url.Action("Index","BookStore")" class="nav2">Products</a></li>
                 <li class="divider"></li>
-                <li><a href="http://all-free-download.com/free-website-templates/" class="nav3">Specials</a></li>
+                <li><a href="@Url.Action("Index","BookStore")" class="nav3">Specials</a></li>
                 <li class="divider"></li>
-                <li><a href="http://all-free-download.com/free-website-templates/" class="nav4">My account</a></li>
+                <li><a href="@Url.Action("Index","BookStore")" class="nav4">My account</a></li>
                 <li class="divider"></li>
-                <li><a href="" class="nav4">Sign Up</a></li>
+                <li><a href="@Url.Action("Dangky","nguoidung")" class="nav4">Sign Up</a></li>
                 <li class="divider"></li>
-                <li><a href="http://all-free-download.com/free-website-templates/" class="nav5">Shipping</a></li>
+                <li><a href="@Url.Action("Index","BookStore")" class="nav5">Shipping</a></li>
                 <li class="divider"></li>
-                <li><a href="contact.html" class="nav6">Contact Us</a></li>
+                <li><a href="@Url.Action("Index","BookStore")" class="nav6">Contact Us</a></li>
                 <li class="divider"></li>
-                <li class="currencies">
-                    Currencies
-                    <select>
-                        <option>US Dollar</option>
-                        <option>Euro</option>
-                    </select>
-                </li>
             </ul>
             <div class="right_menu_corner"></div>
         </div>
-        <div class="crumb_navigation"> Navigation: <span class="current">Home</span> </div>
         <div class="left_content">
             <div class="title_box">Chủ đề</div>
 
                 @Html.Action("ChuDe", "BookStore")
 
-            <div class="title_box">Nhà xuất bản</div>
-            @Html.Action("NhaXuatBan", "BookStore")
-            
-            @*<div class="title_box">Newsletter</div>
-            <div class="border_box">
-                <input type="text" name="newsletter" class="newsletter_input" value="your email" />
-                <a href="http://all-free-download.com/free-website-templates/" class="join">join</a>
-            </div>*@
-            <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/Content/Images/bann2.jpg" alt="" border="0" /></a> </div>
+
         </div>
         <div class="center_content">
             @RenderBody()
         </div>
         <div class="right_content">
             <div class="shopping_cart">
-                <div class="cart_title">Shopping cart</div>
+                <div class="cart_title">Giỏ hàng</div>
                 <div class="cart_details">
-                    3 items <br />
-                    <span class="border_cart"></span> Total: <span class="price">350$</span>
+                    @ViewBag.Tongsoluong sản phẩm <br />
+                    <span class="border_cart"></span> Tổng: <span class="price"> @ViewBag.Tongtien VNĐ</span>
                 </div>
-                <div class="cart_icon"><a href="http://all-free-download.com/free-website-templates/" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/Content/Images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+                <div class="cart_icon"><a href="@Url.Action("Giohang","Giohang")" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/Content/Images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
             </div>
-            <div class="title_box">What’s new</div>
-            <div class="border_box">
-                <div class="product_title"><a href="details.html">Motorola 156 MX-VL</a></div>
-                <div class="product_img"><a href="details.html"><img src="~/Content/Images/p2.gif" alt="" border="0" /></a></div>
-                <div class="prod_price"><span class="reduce">350$</span> <span class="price">270$</span></div>
-            </div>
-            <div class="title_box">Manufacturers</div>
-            <ul class="left_menu">
-                <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Sony</a></li>
-                <li class="even"><a href="http://all-free-download.com/free-website-templates/">Samsung</a></li>
-                <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Daewoo</a></li>
-                <li class="even"><a href="http://all-free-download.com/free-website-templates/">LG</a></li>
-                <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Fujitsu Siemens</a></li>
-                <li class="even"><a href="http://all-free-download.com/free-website-templates/">Motorola</a></li>
-                <li class="odd"><a href="http://all-free-download.com/free-website-templates/">Phillips</a></li>
-                <li class="even"><a href="http://all-free-download.com/free-website-templates/">Beko</a></li>
-            </ul>
-            <div class="banner_adds"> <a href="http://all-free-download.com/free-website-templates/"><img src="~/Content/Images/bann1.jpg" alt="" border="0" /></a> </div>
+            <div class="title_box">Nhà xuất bản</div>
+            @Html.Action("NhaXuatBan", "BookStore")
+
         </div>
         <div class="footer">
             <div class="left_footer"> <img src="~/Content/Images/footer_logo.png" alt="" width="170" height="49" /> </div>

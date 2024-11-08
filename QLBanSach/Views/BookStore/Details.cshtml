@@ -5,7 +5,17 @@
 }
 
 <h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+<h3>
+    <img src="~/Content/Images/iphone.png" title="header=[@Model.Tensach] body=[&nbsp;] fade=[on]" />
+</h3>
 <h3>Tên sách: @Model.Tensach</h3>
 <h3>Giá sách: @Model.Giaban</h3>
 <h3>Chủ đề: @Model.CHUDE.TenChuDe</h3>
+<h3>Nhà xuất bản: @Model.NHAXUATBAN.TenNXB</h3>
 
+
+<div id="Datmua">
+    <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMasach= @Model.Masach, @strURL=Request.Url.ToString() })">
+        ĐẶT MUA
+    </a>
+</div>
