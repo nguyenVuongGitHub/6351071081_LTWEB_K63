@@ -1,4 +1,5 @@
-﻿using QLBanSach.Models.Entities;
+﻿using PagedList;
+using QLBanSach.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,13 @@ namespace QLBanSach.Controllers
             return data.SACHes.OrderByDescending(a => a.Ngaycapnhat).Take(count).ToList();
         }
         
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            var sachMoi = LaySachMoi(5);
-            return View(sachMoi);
+            int pageSize = 5;
+            int pageNum = (page ?? 1);
+
+            var sachMoi = LaySachMoi(15);
+            return View(sachMoi.ToPagedList(pageNum,pageSize));
         }
         public ActionResult ChuDe()
         {
@@ -34,11 +38,14 @@ namespace QLBanSach.Controllers
         }
         public ActionResult SPTheochude(int MaCD)
         {
+
+
             var sach = from s in data.SACHes where s.CHUDE.MaCD == MaCD select s;
             return View(sach);
         }
         public ActionResult SPTheoNXB(int MaNXB)
         {
+
             var sach = from s in data.SACHes where s.MaNXB == MaNXB select s;
             return View(sach);
         }

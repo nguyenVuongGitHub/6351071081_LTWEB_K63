@@ -33,5 +33,6 @@ namespace QLBanSach.Models.Entities
         public DbSet<SACH> SACHes { get; set; }
         public DbSet<TACGIA> TACGIAs { get; set; }
         public DbSet<VIETSACH> VIETSACHes { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }
